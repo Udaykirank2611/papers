@@ -43,6 +43,10 @@ if(st.button("Submit")):
                 pdf_url = "https://drive.google.com/file/d/1JcZWHKk3aLVZjHO6fwTYyhiZtN1RdeTd/preview"
     if(year=="2nd Year 1st Sem"):
         if(branch=="DS"):
+            if(paper=="Mid1"):
+                pdf_url = "https://drive.google.com/file/d/1jQZlGJoTlAs5tLU3KvSiuHxzHbbFIMe7/preview"
+            if(paper=="Mid2"):
+                pdf_url="https://drive.google.com/file/d/1fnnw3GrDQYl7VKCcLgHcTuvVhsFZTP65/preview"
             if(paper=="Sem"):
                 pdf_url = "https://drive.google.com/file/d/1Nxhs7NESzo5bHErQuUuQTGHcKfM2HNZA/preview"
     if(year=="2nd Year 2nd Sem"):
