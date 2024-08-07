@@ -1,14 +1,15 @@
 import streamlit as st
 
 st.title("MVSREC AUTONOMOUS PAPERS")
-year = st.selectbox("Select Your Year and Sem : ",
-["1st Year 1st Sem","1st Year 2nd Sem","2nd Year 1st Sem","2nd Year 2nd Sem","3rd Year 1st Sem","3rd Year 2nd Sem"])
-if(year=="3rd Year"):
-    branch = st.selectbox("Select Your Branch :",
-["CSE","IT","ECE"])
-else:
-    branch = st.selectbox("Select Your Branch :",
+branch = st.selectbox("Select Your Branch :",
 ["CSE","DS","AIML","IOT","IT","ECE"])
+new = ["DS","IOT","AIML"]
+if(branch in new):
+    year = st.selectbox("Select Your Year and Sem : ",
+["1st Year 1st Sem","1st Year 2nd Sem","2nd Year 1st Sem"])
+else:
+    year = st.selectbox("Select Your Year and Sem : ",
+["1st Year 1st Sem","1st Year 2nd Sem","2nd Year 1st Sem","2nd Year 2nd Sem","3rd Year 1st Sem","3rd Year 2nd Sem"])
 paper = st.selectbox("Examination : ",
 ["Mid1","Mid2","Sem"])
 pdf_url = None
@@ -32,3 +33,35 @@ if(st.button("Submit")):
     else:
         pdf_display = f'<iframe src="{pdf_url}" width="700" height="1000" type="application/pdf"></iframe>'
         st.markdown(pdf_display, unsafe_allow_html=True)
+footer = """
+<style>
+.footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--footer-background-color);
+    color: var(--footer-text-color);
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --footer-background-color: #333;
+        --footer-text-color: #f1f1f1;
+    }
+}
+@media (prefers-color-scheme: light) {
+    :root {
+        --footer-background-color: #f1f1f1;
+        --footer-text-color: #333;
+    }
+}
+</style>
+<div class="footer">
+    <p>Developed by Uday Kiran</p>
+    <p>Contact: 245122750006@mvsrec.edu.in</p>
+</div>
+"""
+st.markdown(footer, unsafe_allow_html=True)
