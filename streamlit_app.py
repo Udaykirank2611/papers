@@ -1,5 +1,26 @@
 import streamlit as st
-
+st.markdown("""
+    <style>
+    .top-menu {
+        background-color: #f1f1f1;
+        padding: 10px;
+        text-align: center;
+    }
+    .top-menu a {
+        margin: 0 15px;
+        text-decoration: none;
+        color: #007bff;
+        font-weight: bold;
+    }
+    .top-menu a:hover {
+        text-decoration: underline;
+    }
+    </style>
+    <div class="top-menu">
+        <a href="https://bunkchecker.streamlit.app" target="_blank">BunkChecker</a>
+        <!-- Add more menu items here if needed -->
+    </div>
+    """, unsafe_allow_html=True)
 st.title("MVSREC AUTONOMOUS PAPERS")
 branch = st.selectbox("Select Your Branch :",
 ["CSE","DS","AIML","IOT","IT","ECE"])
