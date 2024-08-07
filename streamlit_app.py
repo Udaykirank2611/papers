@@ -31,4 +31,4 @@ if(st.button("Submit")):
         st.text("WILL BE UPDATED SOON")
     else:
         pdf_display = f'<iframe src="{pdf_url}" width="700" height="1000" type="application/pdf"></iframe>'
-    st.markdown(pdf_display, unsafe_allow_html=True)
+        st.markdown(pdf_display, unsafe_allow_html=True)
