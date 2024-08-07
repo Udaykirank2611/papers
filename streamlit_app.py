@@ -27,7 +27,7 @@ if(st.button("Submit")):
                 pdf_url = "https://drive.google.com/file/d/1jnq_nQwKDOOgpZauapr5xaDAVC6h5n59/preview"
             elif(paper=="Sem"):
                 pdf_url = "https://drive.google.com/file/d/1R8fejWceCxq9sR4TP9hcYeEbYH7G9L6Y/preview"
-    if(pdf_url=="None"):
+    if(pdf_url==None):
         st.text("WILL BE UPDATED SOON")
     else:
         pdf_display = f'<iframe src="{pdf_url}" width="700" height="1000" type="application/pdf"></iframe>'
