@@ -34,6 +34,9 @@ else:
 if branch=="DS" and year == "1st Year 1st Sem":
     paper = st.selectbox("Examination : ",
     ["Mid1 jan 2022-23","Mid2 mar 2022-23","Sem april 2023"])
+elif branch=="DS" and year == "1st Year 2nd Sem":
+    paper = st.selectbox("Examination : ",
+    ["Mid1 july 2023","Mid2 sept 2023","Sem oct 2023"])
 else:
     paper = st.selectbox("Examination : ",
     ["Mid1","Mid2","Sem"])
@@ -47,6 +50,14 @@ if(st.button("Submit")):
                 pdf_url = "https://drive.google.com/file/d/1JcZWHKk3aLVZjHO6fwTYyhiZtN1RdeTd/preview"
             if(paper=="Sem april 2023"):
                 pdf_url = "https://drive.google.com/file/d/1JsKyoQtOxeZKxRKlKN23GLO2A0f9q-HL/preview"
+    if(year=="1st Year 2nd Sem"):
+        if(branch=="DS"):
+            if(paper=="Mid1 july 2023"):
+                pdf_url = "https://drive.google.com/file/d/10s6GxKhdYMFIXWBOuxm5xtA1dzYvZwDM/preview"
+            if(paper=="Mid2 sept 2023"):
+                pdf_url = "https://drive.google.com/file/d/1KETQT4ry1140NSpFtUKhqhbnQYIPIYa5/preview"
+            if(paper=="Sem oct 2023"):
+                pdf_url = "https://drive.google.com/file/d/1xZrFOvAr7do3TzQJM16fAdF98WBjS6NZ/preview"
     if(year=="2nd Year 1st Sem"):
         if(branch=="DS"):
             if(paper=="Mid1"):
