@@ -89,11 +89,11 @@ if(st.button("Submit")):
     if(year=="1st Year 2nd Sem"):
         if(branch=="CSE"):
             if(paper=="Mid1 may 2022"):
-                pdf_url = "https://drive.google.com/file/d/1tk8Zj_ORk2f2o9QFZCwGmhQC7UGn7sk0/preview"
-            elif(paper=="Mid2 july 2022"):
                 pdf_url = "https://drive.google.com/file/d/1f85c54BHbfl9JdL-m9QK_dmfTQnApQVn/preview"
-            elif(paper=="Sem aug 2022"):
+            elif(paper=="Mid2 july 2022"):
                 pdf_url = "https://drive.google.com/file/d/1t795lQowh9DGLmNPzt4LP9xB_LfYK0Yk/preview"
+            elif(paper=="Sem aug 2022"):
+                pdf_url = "https://drive.google.com/file/d/1tk8Zj_ORk2f2o9QFZCwGmhQC7UGn7sk0/preview"
     if(year=="2nd Year 2nd Sem"):
         if(branch=="CSE"):
             if(paper=="Mid1 may 2023"):
