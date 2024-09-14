@@ -126,7 +126,7 @@ if(st.button("Submit")):
                 pdf_url = "https://drive.google.com/file/d/1R8fejWceCxq9sR4TP9hcYeEbYH7G9L6Y/preview"
     if(year=="2nd Year 2nd Sem"):
         if(branch=="ECE"):
-            if(paper=="Sem aug 2024"):
+            if(paper=="Sem"):
                 pdf_url = "https://drive.google.com/file/d/1NCsnxC5pOvP9hemib_RQqi4RTBjoGFuI/preview"
     if(pdf_url==None):
         st.text("WILL BE UPDATED SOON")
