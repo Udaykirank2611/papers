@@ -40,6 +40,9 @@ elif branch=="DS" and year == "1st Year 2nd Sem":
 elif branch=="DS" and year == "2nd Year 1st Sem":
     paper = st.selectbox("Examination : ",
     ["Mid1 dec 2023-24","Mid2 feb 2024","Sem mar 2024"])
+elif branch=="DS" and year == "2nd Year 2nd Sem":
+    paper = st.selectbox("Examination : ",
+    ["Mid1 july 2024","Mid2 aug 2024","Sem aug 2024"])
 else:
     paper = st.selectbox("Examination : ",
     ["Mid1","Mid2","Sem"])
