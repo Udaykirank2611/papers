@@ -31,15 +31,19 @@ if(branch in new):
 else:
     year = st.selectbox("Select Your Year and Sem : ",
 ["1st Year 1st Sem","1st Year 2nd Sem","2nd Year 1st Sem","2nd Year 2nd Sem","3rd Year 1st Sem","3rd Year 2nd Sem"])
-paper = st.selectbox("Examination : ",
-["Mid1","Mid2","Sem"])
+if branch=="DS" and year == "1st Year 1st Sem":
+    paper = st.selectbox("Examination : ",
+    ["Mid1 jan 2022-23","Mid2 mar 2022-23","Sem april 2023"]
+else:
+    paper = st.selectbox("Examination : ",
+    ["Mid1","Mid2","Sem"])
 pdf_url = None
 if(st.button("Submit")):
     if(year=="1st Year 1st Sem"):
         if(branch=="DS"):
-            if(paper=="Mid1 2022-23 jan"):
+            if(paper=="Mid1 jan 2022-23"):
                 pdf_url = "https://drive.google.com/file/d/1KQ3O-nq8hCe1kwa16HSRrHhMI4pHMIrH/preview"
-            if(paper=="Mid2 2022-23 mar"):
+            if(paper=="Mid2 mar 2022-23"):
                 pdf_url = "https://drive.google.com/file/d/1JcZWHKk3aLVZjHO6fwTYyhiZtN1RdeTd/preview"
             if(paper=="Sem april 2023"):
                 pdf_url = "https://drive.google.com/file/d/1JsKyoQtOxeZKxRKlKN23GLO2A0f9q-HL/preview"
