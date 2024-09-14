@@ -27,7 +27,7 @@ branch = st.selectbox("Select Your Branch :",
 new = ["DS","IOT","AIML"]
 if(branch in new):
     year = st.selectbox("Select Your Year and Sem : ",
-["1st Year 1st Sem","1st Year 2nd Sem","2nd Year 1st Sem"])
+["1st Year 1st Sem","1st Year 2nd Sem","2nd Year 1st Sem","2nd Year 2nd Sem"])
 else:
     year = st.selectbox("Select Your Year and Sem : ",
 ["1st Year 1st Sem","1st Year 2nd Sem","2nd Year 1st Sem","2nd Year 2nd Sem","3rd Year 1st Sem","3rd Year 2nd Sem"])
@@ -69,6 +69,14 @@ if(st.button("Submit")):
                 pdf_url="https://drive.google.com/file/d/1fnnw3GrDQYl7VKCcLgHcTuvVhsFZTP65/preview"
             if(paper=="Sem mar 2024"):
                 pdf_url = "https://drive.google.com/file/d/1Nxhs7NESzo5bHErQuUuQTGHcKfM2HNZA/preview"
+    if(year=="2nd Year 2nd Sem"):
+        if(branch=="DS"):
+            if(paper=="Mid1 july 2024"):
+                pdf_url = "https://drive.google.com/file/d/12vnyqyPUPgy5eLEzZM6WfPT0IzD7vauU/preview"
+            if(paper=="Mid2 aug 2024"):
+                pdf_url="https://drive.google.com/file/d/1sedq9ImkXfzSWi1vCSBaVglpkWciMtfK/preview"
+            if(paper=="Sem aug 2024"):
+                pdf_url = "https://drive.google.com/file/d/1aN3Hkq0D7gTwcyIh4QOOhjC4FTbB0Mo8/preview"
     if(year=="2nd Year 2nd Sem"):
         if(branch=="CSE"):
             if(paper=="Mid1"):
