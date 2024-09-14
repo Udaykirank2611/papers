@@ -37,10 +37,12 @@ pdf_url = None
 if(st.button("Submit")):
     if(year=="1st Year 1st Sem"):
         if(branch=="DS"):
-            if(paper=="Mid1"):
+            if(paper=="Mid1 2022-23 jan"):
                 pdf_url = "https://drive.google.com/file/d/1KQ3O-nq8hCe1kwa16HSRrHhMI4pHMIrH/preview"
-            if(paper=="Mid2"):
+            if(paper=="Mid2 2022-23 mar"):
                 pdf_url = "https://drive.google.com/file/d/1JcZWHKk3aLVZjHO6fwTYyhiZtN1RdeTd/preview"
+            if(paper=="Sem april 2023"):
+                pdf_url = "https://drive.google.com/file/d/1JsKyoQtOxeZKxRKlKN23GLO2A0f9q-HL/preview"
     if(year=="2nd Year 1st Sem"):
         if(branch=="DS"):
             if(paper=="Mid1"):
