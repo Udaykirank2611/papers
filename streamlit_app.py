@@ -43,6 +43,9 @@ elif branch=="DS" and year == "2nd Year 1st Sem":
 elif branch=="DS" and year == "2nd Year 2nd Sem":
     paper = st.selectbox("Examination : ",
     ["Mid1 july 2024","Mid2 aug 2024","Sem aug 2024"])
+elif branch=="CSE" and year == "2nd Year 2nd Sem":
+    paper = st.selectbox("Examination : ",
+    ["Mid1 may 2024","Mid2 july 2024","Sem aug 2024"])
 else:
     paper = st.selectbox("Examination : ",
     ["Mid1","Mid2","Sem"])
@@ -82,11 +85,11 @@ if(st.button("Submit")):
                 pdf_url = "https://drive.google.com/file/d/1aN3Hkq0D7gTwcyIh4QOOhjC4FTbB0Mo8/preview"
     if(year=="2nd Year 2nd Sem"):
         if(branch=="CSE"):
-            if(paper=="Mid1"):
+            if(paper=="Mid1 may 2023"):
                 pdf_url = "https://drive.google.com/file/d/1q27z5x7oK92hC9bb_mB-InUkZDZESkPz/preview"
-            elif(paper=="Mid2"):
+            elif(paper=="Mid2 july 2023"):
                 pdf_url = "https://drive.google.com/file/d/1jnq_nQwKDOOgpZauapr5xaDAVC6h5n59/preview"
-            elif(paper=="Sem"):
+            elif(paper=="Sem aug 2023"):
                 pdf_url = "https://drive.google.com/file/d/1R8fejWceCxq9sR4TP9hcYeEbYH7G9L6Y/preview"
     if(pdf_url==None):
         st.text("WILL BE UPDATED SOON")
