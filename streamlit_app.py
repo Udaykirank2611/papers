@@ -27,7 +27,7 @@ branch = st.selectbox("Select Your Branch :",
 new = ["DS","IOT","AIML"]
 if(branch in new):
     year = st.selectbox("Select Your Year and Sem : ",
-["1st Year 1st Sem","1st Year 2nd Sem","2nd Year 1st Sem","2nd Year 2nd Sem"])
+["1st Year 1st Sem","1st Year 2nd Sem","2nd Year 1st Sem","2nd Year 2nd Sem","3rd Year 1st Sem"])
 else:
     year = st.selectbox("Select Your Year and Sem : ",
 ["1st Year 1st Sem","1st Year 2nd Sem","2nd Year 1st Sem","2nd Year 2nd Sem","3rd Year 1st Sem","3rd Year 2nd Sem"])
@@ -43,6 +43,9 @@ elif branch=="DS" and year == "2nd Year 1st Sem":
 elif branch=="DS" and year == "2nd Year 2nd Sem":
     paper = st.selectbox("Examination : ",
     ["Mid1 july 2024","Mid2 aug 2024","Sem aug 2024"])
+elif branch=="DS" and year == "3rd Year 1st Sem":
+    paper = st.selectbox("Examination : ",
+    ["Mid1 Nov 2024","Mid2 Jan 2025","Sem Feb 2025"])
 elif branch=="CSE" and year == "1st Year 1st Sem":
     paper = st.selectbox("Examination : ",
     ["Mid1 feb 2022","Mid2 mar 2022","Sem april 2022"])
@@ -98,6 +101,10 @@ if(st.button("Submit")):
                 pdf_url="https://drive.google.com/file/d/1sedq9ImkXfzSWi1vCSBaVglpkWciMtfK/preview"
             if(paper=="Sem aug 2024"):
                 pdf_url = "https://drive.google.com/file/d/1aN3Hkq0D7gTwcyIh4QOOhjC4FTbB0Mo8/preview"
+    if(year=="3rd Year 2nd Sem"):
+        if(branch=="DS"):
+            if(paper=="Mid1 Nov 2024"):
+                pdf_url = "https://drive.google.com/file/d/1eFJrUEHYPmpWtN8rNDSjY8KvEZXceSLV/preview"
     if(year=="1st Year 1st Sem"):
         if(branch=="CSE"):
             if(paper=="Mid1 feb 2022"):
