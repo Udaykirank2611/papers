@@ -106,7 +106,9 @@ if(st.button("Submit")):
             if(paper=="Mid1 Nov 2024"):
                 pdf_url = "https://drive.google.com/file/d/1eFJrUEHYPmpWtN8rNDSjY8KvEZXceSLV/preview"
             if(paper=="Mid2 Jan 2025"):
-                pdf_url="https://drive.google.com/file/d/1h8iN73g9-I05c8GzxslB1lSjeD7FBiBr/preview"    
+                pdf_url="https://drive.google.com/file/d/1h8iN73g9-I05c8GzxslB1lSjeD7FBiBr/preview"
+            if(paper=="Sem Feb 2025"):
+                pdf_url="https://drive.google.com/file/d/1gUEMQDcbz6xxz9ZP_ZXXE8wTzv42w4vc/preview"
     if(year=="3rd Year 2nd Sem"):
         if(branch=="DS"):
             if(paper=="Mid1 Nov 2024"):
