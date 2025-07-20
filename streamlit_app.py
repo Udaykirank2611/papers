@@ -182,6 +182,9 @@ elif branch=="CSE" and year == "3rd Year 1st Sem":
 elif branch=="CSE" and year == "3rd Year 2nd Sem":
     paper = st.selectbox("Examination : ",
     ["Mid1 April 2024","Mid2 July 2024","Sem July 2024"])
+elif branch=="IT" and year == "3rd Year 1st Sem":
+    paper = st.selectbox("Examination : ",
+    ["Mid1 nov 2024"])
 else:
     paper = st.selectbox("Examination : ",
     ["Mid1","Mid2","Sem"])
@@ -282,6 +285,10 @@ if(st.button("Submit")):
                 pdf_url = "https://drive.google.com/file/d/1_8d8F6eZjDApbiAg0k-qfCls-VSR7xDP/preview"
             elif(paper == "Sem July 2024"):
                 pdf_url = "https://drive.google.com/file/d/1-vR7jo5Khy7WnaQ8XSo3ogXC38lN_gfb/preview"
+    if(year=="3rd Year 1st Sem"):
+        if(branch=="IT"):
+            if(paper=="Mid1 nov 2024"):
+                pdf_url = "https://drive.google.com/file/d/1thIx1Ks0FBonK44Fw-PS0Ngq-ba26INf/preview"
     if(year=="2nd Year 2nd Sem"):
         if(branch=="ECE"):
             if(paper=="Sem"):
