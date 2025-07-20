@@ -27,10 +27,10 @@ branch = st.selectbox("Select Your Branch :",
 new = ["DS","IOT","AIML"]
 if(branch in new):
     year = st.selectbox("Select Your Year and Sem : ",
-["1st Year 1st Sem","1st Year 2nd Sem","2nd Year 1st Sem","2nd Year 2nd Sem","3rd Year 1st Sem"])
+["1st Year 1st Sem","1st Year 2nd Sem","2nd Year 1st Sem","2nd Year 2nd Sem","3rd Year 1st Sem","3rd Year 2nd Sem"])
 else:
     year = st.selectbox("Select Your Year and Sem : ",
-["1st Year 1st Sem","1st Year 2nd Sem","2nd Year 1st Sem","2nd Year 2nd Sem","3rd Year 1st Sem","3rd Year 2nd Sem"])
+["1st Year 1st Sem","1st Year 2nd Sem","2nd Year 1st Sem","2nd Year 2nd Sem","3rd Year 1st Sem","3rd Year 2nd Sem","4th Year 1st Sem"])
 if branch=="DS" and year == "1st Year 1st Sem":
     paper = st.selectbox("Examination : ",
     ["Mid1 jan 2022-23","Mid2 mar 2022-23","Sem april 2023"])
@@ -46,6 +46,9 @@ elif branch=="DS" and year == "2nd Year 2nd Sem":
 elif branch=="DS" and year == "3rd Year 1st Sem":
     paper = st.selectbox("Examination : ",
     ["Mid1 Nov 2024","Mid2 Jan 2025","Sem Feb 2025"])
+elif branch=="DS" and year == "3rd Year 2nd Sem":
+    paper = st.selectbox("Examination : ",
+    ["Mid1 April 2025","Mid2 July 2025","Sem August 2025"])
 elif branch=="CSE" and year == "1st Year 1st Sem":
     paper = st.selectbox("Examination : ",
     ["Mid1 feb 2022","Mid2 mar 2022","Sem april 2022"])
@@ -111,8 +114,10 @@ if(st.button("Submit")):
                 pdf_url="https://drive.google.com/file/d/1gUEMQDcbz6xxz9ZP_ZXXE8wTzv42w4vc/preview"
     if(year=="3rd Year 2nd Sem"):
         if(branch=="DS"):
-            if(paper=="Mid1 Nov 2024"):
-                pdf_url = "https://drive.google.com/file/d/1eFJrUEHYPmpWtN8rNDSjY8KvEZXceSLV/preview"
+            if(paper=="Mid1 April 2025"):
+                pdf_url = "https://drive.google.com/file/d/1T81A1_TCLiJhRd27CF0vJz6XVBWtAdYN/preview"
+            if(paper=="Mid2 July 2025"):
+                pdf_url = "https://drive.google.com/file/d/1QOEeYJ7IJCN4RhwZpTFyh4tEtVmMUeJn/preview"
     if(year=="1st Year 1st Sem"):
         if(branch=="CSE"):
             if(paper=="Mid1 feb 2022"):
