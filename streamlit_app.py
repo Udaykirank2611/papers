@@ -237,6 +237,8 @@ if(st.button("Submit")):
                 pdf_url = "https://drive.google.com/file/d/1T81A1_TCLiJhRd27CF0vJz6XVBWtAdYN/preview"
             if(paper=="Mid2 July 2025"):
                 pdf_url = "https://drive.google.com/file/d/1QOEeYJ7IJCN4RhwZpTFyh4tEtVmMUeJn/preview"
+            if(paper == "Sem August 2025"):
+                pdf_url = "https://drive.google.com/file/d/1d4UiAvvCpYuKWyksiqGYkmT4u-tE6bw4/preview"
     if(year=="1st Year 1st Sem"):
         if(branch=="CSE"):
             if(paper=="Mid1 feb 2022"):
