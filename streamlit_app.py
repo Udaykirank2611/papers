@@ -3,125 +3,133 @@ import streamlit as st
 # --- PAGE STYLE ---
 st.markdown("""
 <style>
-
-/* ====== COLORS ====== */
-:root {
-    --bg: #f6f8fc;
-    --card: #ffffff;
-    --text: #111827;
-    --muted: #6b7280;
-    --primary: #2563eb;
-    --border: #e5e7eb;
+/* Gradient Background – light/dark mode support */
+body {
+    background: linear-gradient(135deg, #6d83f2 0%, #0bc8a9 100%) !important;
+    min-height: 100vh;
 }
-
-/* ====== APP BACKGROUND ====== */
 .stApp {
-    background-color: var(--bg);
+    background: linear-gradient(135deg, #6d83f2 0%, #0bc8a9 100%) !important;
 }
 
-/* ====== FORCE STREAMLIT HEADER OFFSET ====== */
-div[data-testid="stAppViewContainer"] {
-    padding-top: 80px;
-}
-
-/* ====== TOP MENU ====== */
-.top-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: var(--card);
-    border-bottom: 1px solid var(--border);
-    padding: 16px 0;
-    text-align: center;
-    z-index: 9999;
-}
-
-.top-menu a {
-    color: var(--primary);
-    font-size: 1.4rem;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-/* ====== MAIN CARD ====== */
+/* Fancy Glassmorphism Card for the main area */
 .main-card {
-    max-width: 760px;
-    margin: 0 auto 40px auto;
-    background: var(--card);
-    border-radius: 18px;
-    padding: 36px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-    border: 1px solid var(--border);
+    max-width: 670px;
+    margin: 32px auto 32px auto;
+    background: rgba(255,255,255,0.10);
+    box-shadow: 0 8px 32px 0 rgba(21,27,80,.12);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+    padding: 32px 32px 16px 32px;
+    font-family: 'Segoe UI', 'Poppins', Arial, sans-serif;
 }
 
-/* ====== TEXT VISIBILITY (CRITICAL) ====== */
-h1, h2, h3 {
-    color: var(--text) !important;
+h1, h2, h3, h4 {
+    color: #fff !important;
+    text-shadow: 0 1px 10px rgba(27,51,196,0.16);
 }
 
-/* Streamlit widget labels */
-div[data-testid="stWidgetLabel"] {
-    color: var(--text) !important;
-    font-weight: 600;
+label, .css-1cpxqw2, .css-1jy7b63 {
+    font-size: 1.07rem!important;
+    color: #ecebff !important;
     margin-bottom: 6px;
 }
 
-/* ====== SELECTBOX ====== */
-.stSelectbox > div {
-    background: #1f2937 !important;
-    border-radius: 10px !important;
+/* Custom styled menu bar */
+.top-menu {
+    background: rgba(0,24,48, 0.75);
+    padding: 18px 5px 13px 5px;
+    border-radius: 0 0 26px 26px;
+    box-shadow: 0 6px 18px rgba(31,74,138,0.08);
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Selected text */
-.stSelectbox span {
-    color: #ffffff !important;
-}
-
-/* Arrow */
-.stSelectbox svg {
-    fill: #ffffff !important;
-}
-
-/* ====== BUTTON ====== */
-.stButton > button {
-    background: var(--primary);
-    color: white;
-    border-radius: 10px;
-    padding: 0.45rem 1.6rem;
+.top-menu a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #fff;
     font-weight: 600;
+    letter-spacing: 1px;
+    transition: all .22s;
+    padding: 7px 18px;
+    border-radius: 20px;
+}
+
+.top-menu a:hover {
+    background: #0bc8a9;
+    color: #2b2b2b;
+    box-shadow: 0 2px 12px rgba(17,228,215,0.18);
+    text-decoration: none;
+    transform: translateY(-2px) scale(1.06);
+}
+
+/* Glow for selectbox and buttons */
+.stSelectbox > div, .stButton > button {
+    box-shadow: 0 2px 12px 0 #5786e9cc, 0 1.5px 8px 0 #0bc8a966;
+    border-radius: 14px !important;
+    font-weight: 600 !important;
+    font-family: 'Segoe UI', 'Poppins', Arial, sans-serif !important;
+    transition: box-shadow .17s;
+}
+.stButton > button {
+    background: linear-gradient(90deg,#5dd6ff 0,#7b6ffb 100%) !important;
+    color: #fff !important;
     border: none;
+    font-size: 1.13rem !important;
+    padding: 0.2rem 1.4rem;
 }
-
-/* ====== PDF ====== */
+.stButton > button:hover {
+    background: linear-gradient(90deg,#0bc8a9 0,#7b6ffb 90%);
+    box-shadow: 0 4px 14px 0 #869bff70;
+}
+/* Responsive PDF display */
 .pdf-area iframe {
-    width: 100%;
-    height: 560px;
-    border-radius: 12px;
-    border: 1px solid var(--border);
-    margin-top: 24px;
+    border-radius: 16px;
+    box-shadow: 0 3px 26px 1px rgba(27, 47, 95, 0.22);
+    background: #23273e3b;
+    border: none;
+    margin: 28px 0 16px;
+    min-height: 500px;
 }
 
-/* ====== FOOTER ====== */
+/* Cool sticky footer */
 .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    background: rgba(25,30,43,0.28);
+    color: #fff;
     text-align: center;
-    color: var(--muted);
-    margin-top: 40px;
-    font-size: 0.9rem;
+    padding: 10px 0;
+    font-size: 1.02rem;
+    letter-spacing: 2px;
+    z-index: 99;
+    font-weight: 400;
+    user-select: none;
+    box-shadow: 0 -2px 8px #1b2c556e;
+    backdrop-filter: blur(6px);
 }
 
+@media (max-width: 1000px) {
+    .main-card { padding: 13px 6px 2px 6px; }
+    .pdf-area iframe { width: 94vw !important; min-height: 320px !important;}
+    .footer { font-size: .95rem; }
+}
 </style>
 """, unsafe_allow_html=True)
+
+# --- TOP MENU BAR ---
 st.markdown("""
 <div class="top-menu">
-    <a href="https://bunkchecker.streamlit.app" target="_blank">
-        BunkChecker
-    </a>
+    <a href="https://bunkchecker.streamlit.app" target="_blank">BunkChecker</a>
+    <!-- Add more menu items here if needed -->
 </div>
 """, unsafe_allow_html=True)
-
-
-
 
 # --- MAIN CONTENT CARD ---
 st.markdown('<div class="main-card">', unsafe_allow_html=True)
