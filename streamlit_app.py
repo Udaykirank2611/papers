@@ -3,125 +3,107 @@ import streamlit as st
 # --- PAGE STYLE ---
 st.markdown("""
 <style>
-/* Gradient Background – light/dark mode support */
-body {
-    background: linear-gradient(135deg, #6d83f2 0%, #0bc8a9 100%) !important;
-    min-height: 100vh;
+
+/* ===== Global ===== */
+html, body, [class*="css"] {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    color: #1f2937;
 }
+
 .stApp {
-    background: linear-gradient(135deg, #6d83f2 0%, #0bc8a9 100%) !important;
+    background: #f5f7fb;
 }
 
-/* Fancy Glassmorphism Card for the main area */
+/* ===== Main Card ===== */
 .main-card {
-    max-width: 670px;
-    margin: 32px auto 32px auto;
-    background: rgba(255,255,255,0.10);
-    box-shadow: 0 8px 32px 0 rgba(21,27,80,.12);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    border: 1px solid rgba(255,255,255,0.3);
-    padding: 32px 32px 16px 32px;
-    font-family: 'Segoe UI', 'Poppins', Arial, sans-serif;
+    max-width: 720px;
+    margin: 40px auto;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 32px;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.05);
 }
 
-h1, h2, h3, h4 {
-    color: #fff !important;
-    text-shadow: 0 1px 10px rgba(27,51,196,0.16);
+/* ===== Headings ===== */
+h1 {
+    color: #1f2937;
+    font-weight: 700;
+    margin-bottom: 12px;
 }
 
-label, .css-1cpxqw2, .css-1jy7b63 {
-    font-size: 1.07rem!important;
-    color: #ecebff !important;
-    margin-bottom: 6px;
+h2, h3 {
+    color: #374151;
 }
 
-/* Custom styled menu bar */
+/* ===== Labels ===== */
+label {
+    font-weight: 600 !important;
+    color: #374151 !important;
+}
+
+/* ===== Selectbox ===== */
+.stSelectbox > div {
+    border-radius: 10px !important;
+    border: 1px solid #d1d5db;
+    background: #ffffff;
+}
+
+/* ===== Button ===== */
+.stButton > button {
+    background: #2f5cff;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 0.45rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+}
+
+.stButton > button:hover {
+    background: #2448d8;
+}
+
+/* ===== PDF Viewer ===== */
+.pdf-area iframe {
+    width: 100%;
+    height: 560px;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    margin-top: 24px;
+}
+
+/* ===== Top Bar ===== */
 .top-menu {
-    background: rgba(0,24,48, 0.75);
-    padding: 18px 5px 13px 5px;
-    border-radius: 0 0 26px 26px;
-    box-shadow: 0 6px 18px rgba(31,74,138,0.08);
-    margin-bottom: 28px;
+    background: #ffffff;
+    padding: 14px;
+    border-bottom: 1px solid #e5e7eb;
     display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .top-menu a {
-    margin: 0 15px;
     text-decoration: none;
-    color: #fff;
+    color: #2f5cff;
     font-weight: 600;
-    letter-spacing: 1px;
-    transition: all .22s;
-    padding: 7px 18px;
-    border-radius: 20px;
+    margin: 0 16px;
 }
 
 .top-menu a:hover {
-    background: #0bc8a9;
-    color: #2b2b2b;
-    box-shadow: 0 2px 12px rgba(17,228,215,0.18);
-    text-decoration: none;
-    transform: translateY(-2px) scale(1.06);
+    text-decoration: underline;
 }
 
-/* Glow for selectbox and buttons */
-.stSelectbox > div, .stButton > button {
-    box-shadow: 0 2px 12px 0 #5786e9cc, 0 1.5px 8px 0 #0bc8a966;
-    border-radius: 14px !important;
-    font-weight: 600 !important;
-    font-family: 'Segoe UI', 'Poppins', Arial, sans-serif !important;
-    transition: box-shadow .17s;
-}
-.stButton > button {
-    background: linear-gradient(90deg,#5dd6ff 0,#7b6ffb 100%) !important;
-    color: #fff !important;
-    border: none;
-    font-size: 1.13rem !important;
-    padding: 0.2rem 1.4rem;
-}
-.stButton > button:hover {
-    background: linear-gradient(90deg,#0bc8a9 0,#7b6ffb 90%);
-    box-shadow: 0 4px 14px 0 #869bff70;
-}
-/* Responsive PDF display */
-.pdf-area iframe {
-    border-radius: 16px;
-    box-shadow: 0 3px 26px 1px rgba(27, 47, 95, 0.22);
-    background: #23273e3b;
-    border: none;
-    margin: 28px 0 16px;
-    min-height: 500px;
-}
-
-/* Cool sticky footer */
+/* ===== Footer ===== */
 .footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100vw;
-    background: rgba(25,30,43,0.28);
-    color: #fff;
+    margin-top: 40px;
     text-align: center;
-    padding: 10px 0;
-    font-size: 1.02rem;
-    letter-spacing: 2px;
-    z-index: 99;
-    font-weight: 400;
-    user-select: none;
-    box-shadow: 0 -2px 8px #1b2c556e;
-    backdrop-filter: blur(6px);
+    color: #6b7280;
+    font-size: 0.9rem;
 }
 
-@media (max-width: 1000px) {
-    .main-card { padding: 13px 6px 2px 6px; }
-    .pdf-area iframe { width: 94vw !important; min-height: 320px !important;}
-    .footer { font-size: .95rem; }
-}
 </style>
 """, unsafe_allow_html=True)
+
 
 # --- TOP MENU BAR ---
 st.markdown("""
