@@ -4,67 +4,89 @@ import streamlit as st
 st.markdown("""
 <style>
 
-/* ===== Global ===== */
-html, body, [class*="css"] {
-    font-family: 'Inter', 'Segoe UI', sans-serif;
-    color: #1f2937;
-}
-
+/* ========== Base App ========== */
 .stApp {
-    background: #f5f7fb;
+    background-color: #f6f8fc;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
-/* ===== Main Card ===== */
+/* ========== Top Header ========== */
+.top-menu {
+    background: #ffffff;
+    padding: 16px 0;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.top-menu a {
+    color: #2563eb;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* ========== Main Card ========== */
 .main-card {
-    max-width: 720px;
+    max-width: 760px;
     margin: 40px auto;
     background: #ffffff;
-    border-radius: 16px;
-    padding: 32px;
+    border-radius: 18px;
+    padding: 36px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.08);
     border: 1px solid #e5e7eb;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.05);
 }
 
-/* ===== Headings ===== */
-h1 {
-    color: #1f2937;
-    font-weight: 700;
-    margin-bottom: 12px;
+/* ========== Text (IMPORTANT) ========== */
+.main-card h1,
+.main-card h2,
+.main-card h3 {
+    color: #111827 !important;
 }
 
-h2, h3 {
-    color: #374151;
-}
-
-/* ===== Labels ===== */
-label {
-    font-weight: 600 !important;
+.main-card label {
     color: #374151 !important;
+    font-weight: 600;
 }
 
-/* ===== Selectbox ===== */
+.main-card p,
+.main-card span,
+.main-card div {
+    color: #1f2937;
+}
+
+/* ========== Selectbox ========== */
 .stSelectbox > div {
+    background-color: #ffffff !important;
+    border: 1px solid #d1d5db !important;
     border-radius: 10px !important;
-    border: 1px solid #d1d5db;
-    background: #ffffff;
 }
 
-/* ===== Button ===== */
+/* Selected value */
+.stSelectbox div[data-baseweb="select"] span {
+    color: #111827 !important;
+}
+
+/* Dropdown arrow */
+.stSelectbox svg {
+    fill: #374151 !important;
+}
+
+/* ========== Button ========== */
 .stButton > button {
-    background: #2f5cff;
+    background-color: #2563eb;
     color: #ffffff;
     border-radius: 10px;
-    padding: 0.45rem 1.5rem;
+    padding: 0.45rem 1.6rem;
     font-size: 1rem;
     font-weight: 600;
     border: none;
 }
 
 .stButton > button:hover {
-    background: #2448d8;
+    background-color: #1d4ed8;
 }
 
-/* ===== PDF Viewer ===== */
+/* ========== PDF Viewer ========== */
 .pdf-area iframe {
     width: 100%;
     height: 560px;
@@ -73,45 +95,17 @@ label {
     margin-top: 24px;
 }
 
-/* ===== Top Bar ===== */
-.top-menu {
-    background: #ffffff;
-    padding: 14px;
-    border-bottom: 1px solid #e5e7eb;
-    display: flex;
-    justify-content: center;
-}
-
-.top-menu a {
-    text-decoration: none;
-    color: #2f5cff;
-    font-weight: 600;
-    margin: 0 16px;
-}
-
-.top-menu a:hover {
-    text-decoration: underline;
-}
-
-/* ===== Footer ===== */
+/* ========== Footer ========== */
 .footer {
-    margin-top: 40px;
     text-align: center;
     color: #6b7280;
     font-size: 0.9rem;
+    margin-top: 30px;
 }
 
 </style>
 """, unsafe_allow_html=True)
 
-
-# --- TOP MENU BAR ---
-st.markdown("""
-<div class="top-menu">
-    <a href="https://bunkchecker.streamlit.app" target="_blank">BunkChecker</a>
-    <!-- Add more menu items here if needed -->
-</div>
-""", unsafe_allow_html=True)
 
 # --- MAIN CONTENT CARD ---
 st.markdown('<div class="main-card">', unsafe_allow_html=True)
