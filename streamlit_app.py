@@ -4,107 +4,118 @@ import streamlit as st
 st.markdown("""
 <style>
 
-/* ========== Base App ========== */
-.stApp {
-    background-color: #f6f8fc;
-    font-family: 'Inter', 'Segoe UI', sans-serif;
+/* ---------------- ROOT RESET ---------------- */
+:root {
+    --bg: #f6f8fc;
+    --card: #ffffff;
+    --text: #111827;
+    --muted: #6b7280;
+    --primary: #2563eb;
+    --border: #e5e7eb;
 }
 
-/* ========== Top Header ========== */
+/* ---------------- APP BACKGROUND ---------------- */
+.stApp {
+    background-color: var(--bg);
+}
+
+/* ---------------- TOP MENU ---------------- */
 .top-menu {
-    background: #ffffff;
-    padding: 16px 0;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
     text-align: center;
-    border-bottom: 1px solid #e5e7eb;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .top-menu a {
-    color: #2563eb;
-    font-size: 1.2rem;
+    color: var(--primary);
+    font-size: 1.3rem;
     font-weight: 700;
     text-decoration: none;
 }
 
-/* ========== Main Card ========== */
+/* ---------------- MAIN CARD ---------------- */
 .main-card {
     max-width: 760px;
     margin: 40px auto;
-    background: #ffffff;
+    background: var(--card);
     border-radius: 18px;
     padding: 36px;
-    box-shadow: 0 18px 40px rgba(0,0,0,0.08);
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--border);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
-/* ========== Text (IMPORTANT) ========== */
+/* ---------------- FORCE TEXT VISIBILITY ---------------- */
 .main-card h1,
 .main-card h2,
-.main-card h3 {
-    color: #111827 !important;
-}
-
-.main-card label {
-    color: #374151 !important;
-    font-weight: 600;
-}
-
+.main-card h3,
 .main-card p,
 .main-card span,
-.main-card div {
-    color: #1f2937;
+.main-card div,
+.main-card label {
+    color: var(--text) !important;
 }
 
-/* ========== Selectbox ========== */
+/* ---------------- STREAMLIT HEADINGS ---------------- */
+h1, h2, h3 {
+    color: var(--text) !important;
+}
+
+/* ---------------- SELECTBOX ---------------- */
 .stSelectbox > div {
-    background-color: #ffffff !important;
-    border: 1px solid #d1d5db !important;
+    background: #1f2937 !important;
     border-radius: 10px !important;
+    border: none !important;
 }
 
 /* Selected value */
-.stSelectbox div[data-baseweb="select"] span {
-    color: #111827 !important;
+.stSelectbox span {
+    color: #ffffff !important;
+    font-weight: 500;
 }
 
 /* Dropdown arrow */
 .stSelectbox svg {
-    fill: #374151 !important;
+    fill: #ffffff !important;
 }
 
-/* ========== Button ========== */
+/* ---------------- BUTTON ---------------- */
 .stButton > button {
-    background-color: #2563eb;
-    color: #ffffff;
+    background: var(--primary);
+    color: white;
     border-radius: 10px;
     padding: 0.45rem 1.6rem;
-    font-size: 1rem;
     font-weight: 600;
     border: none;
 }
 
 .stButton > button:hover {
-    background-color: #1d4ed8;
+    background: #1d4ed8;
 }
 
-/* ========== PDF Viewer ========== */
+/* ---------------- PDF ---------------- */
 .pdf-area iframe {
     width: 100%;
     height: 560px;
     border-radius: 12px;
-    border: 1px solid #e5e7eb;
+    border: 1px solid var(--border);
     margin-top: 24px;
 }
 
-/* ========== Footer ========== */
+/* ---------------- FOOTER ---------------- */
 .footer {
     text-align: center;
-    color: #6b7280;
+    color: var(--muted);
+    margin-top: 40px;
     font-size: 0.9rem;
-    margin-top: 30px;
 }
 
 </style>
 """, unsafe_allow_html=True)
+
 
 
 # --- MAIN CONTENT CARD ---
