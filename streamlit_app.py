@@ -1,8 +1,3 @@
-Here is a complete redesign. I have switched to a **Modern Dark Glassmorphism** theme which is easier on the eyes, professional, and distinct.
-
-I also refactored your Python logic. Instead of 50+ nested `if-else` statements, I used a **Dictionary (Key-Value Pair)** structure. This makes the code cleaner, faster, and much easier for you to update later.
-
-```python
 import streamlit as st
 
 # --- PAGE CONFIGURATION ---
@@ -303,4 +298,3 @@ st.markdown("""
     Developed by <span>Uday Kiran</span> | Contact: 245122750006@mvsrec.edu.in
 </div>
 """, unsafe_allow_html=True)
-```
