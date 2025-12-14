@@ -4,7 +4,7 @@ import streamlit as st
 st.markdown("""
 <style>
 
-/* ---------------- ROOT RESET ---------------- */
+/* ====== COLORS ====== */
 :root {
     --bg: #f6f8fc;
     --card: #ffffff;
@@ -14,75 +14,76 @@ st.markdown("""
     --border: #e5e7eb;
 }
 
-/* ---------------- APP BACKGROUND ---------------- */
+/* ====== APP BACKGROUND ====== */
 .stApp {
     background-color: var(--bg);
 }
 
-/* ---------------- TOP MENU ---------------- */
+/* ====== FORCE STREAMLIT HEADER OFFSET ====== */
+div[data-testid="stAppViewContainer"] {
+    padding-top: 80px;
+}
+
+/* ====== TOP MENU ====== */
 .top-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background: var(--card);
     border-bottom: 1px solid var(--border);
-    padding: 14px 0;
+    padding: 16px 0;
     text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 999;
+    z-index: 9999;
 }
 
 .top-menu a {
     color: var(--primary);
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 700;
     text-decoration: none;
 }
 
-/* ---------------- MAIN CARD ---------------- */
+/* ====== MAIN CARD ====== */
 .main-card {
     max-width: 760px;
-    margin: 40px auto;
+    margin: 0 auto 40px auto;
     background: var(--card);
     border-radius: 18px;
     padding: 36px;
-    border: 1px solid var(--border);
     box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    border: 1px solid var(--border);
 }
 
-/* ---------------- FORCE TEXT VISIBILITY ---------------- */
-.main-card h1,
-.main-card h2,
-.main-card h3,
-.main-card p,
-.main-card span,
-.main-card div,
-.main-card label {
-    color: var(--text) !important;
-}
-
-/* ---------------- STREAMLIT HEADINGS ---------------- */
+/* ====== TEXT VISIBILITY (CRITICAL) ====== */
 h1, h2, h3 {
     color: var(--text) !important;
 }
 
-/* ---------------- SELECTBOX ---------------- */
+/* Streamlit widget labels */
+div[data-testid="stWidgetLabel"] {
+    color: var(--text) !important;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+/* ====== SELECTBOX ====== */
 .stSelectbox > div {
     background: #1f2937 !important;
     border-radius: 10px !important;
-    border: none !important;
 }
 
-/* Selected value */
+/* Selected text */
 .stSelectbox span {
     color: #ffffff !important;
-    font-weight: 500;
 }
 
-/* Dropdown arrow */
+/* Arrow */
 .stSelectbox svg {
     fill: #ffffff !important;
 }
 
-/* ---------------- BUTTON ---------------- */
+/* ====== BUTTON ====== */
 .stButton > button {
     background: var(--primary);
     color: white;
@@ -92,11 +93,7 @@ h1, h2, h3 {
     border: none;
 }
 
-.stButton > button:hover {
-    background: #1d4ed8;
-}
-
-/* ---------------- PDF ---------------- */
+/* ====== PDF ====== */
 .pdf-area iframe {
     width: 100%;
     height: 560px;
@@ -105,7 +102,7 @@ h1, h2, h3 {
     margin-top: 24px;
 }
 
-/* ---------------- FOOTER ---------------- */
+/* ====== FOOTER ====== */
 .footer {
     text-align: center;
     color: var(--muted);
@@ -115,6 +112,14 @@ h1, h2, h3 {
 
 </style>
 """, unsafe_allow_html=True)
+st.markdown("""
+<div class="top-menu">
+    <a href="https://bunkchecker.streamlit.app" target="_blank">
+        BunkChecker
+    </a>
+</div>
+""", unsafe_allow_html=True)
+
 
 
 
