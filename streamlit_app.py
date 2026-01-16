@@ -36,7 +36,11 @@ PAPERS_DB = {
             "Mid1 April 2025": "https://drive.google.com/file/d/1T81A1_TCLiJhRd27CF0vJz6XVBWtAdYN/preview",
             "Mid2 July 2025": "https://drive.google.com/file/d/1QOEeYJ7IJCN4RhwZpTFyh4tEtVmMUeJn/preview",
             "Sem August 2025": "https://drive.google.com/file/d/1d4UiAvvCpYuKWyksiqGYkmT4u-tE6bw4/preview"
-        }
+        },
+        "4th Year 1st Sem": {
+            "Mid1 Nov 2025": "https://drive.google.com/file/d/1T81A1_TCLiJhRd27CF0vJz6XVBWtAdYN/preview",
+            "Mid2 Dec 2025": "https://drive.google.com/file/d/1i7WY8uH9KWhdu7mdII3TPvKQGhijko-f/preview",
+        }       
     },
     "CSE": {
         "1st Year 1st Sem": {
@@ -241,11 +245,7 @@ with st.container():
         ]
         
         # Filter years for new branches if necessary
-        new_branches = ["DS", "IOT", "AIML"]
-        if selected_branch in new_branches:
-            available_years = all_years[:-1] # Exclude 4th year
-        else:
-            available_years = all_years
+        available_years = all_years
             
         selected_year = st.selectbox("Select Year & Sem", available_years)
 
