@@ -38,7 +38,7 @@ PAPERS_DB = {
             "Sem August 2025": "https://drive.google.com/file/d/1d4UiAvvCpYuKWyksiqGYkmT4u-tE6bw4/preview"
         },
         "4th Year 1st Sem": {
-            "Mid1 Nov 2025": "https://drive.google.com/file/d/1T81A1_TCLiJhRd27CF0vJz6XVBWtAdYN/preview",
+            "Mid1 Nov 2025": "https://drive.google.com/file/d/1BLShmaLEkvxQ7YB3DKH0X5DjhLbaT5Ip/preview",
             "Mid2 Dec 2025": "https://drive.google.com/file/d/1i7WY8uH9KWhdu7mdII3TPvKQGhijko-f/preview",
         }       
     },
